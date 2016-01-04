@@ -38,3 +38,4 @@ _NCrunch_*
 *.favdoc
 TestResult/*
 *nCrunchTemp_*
+.vs/config/applicationhost.config
