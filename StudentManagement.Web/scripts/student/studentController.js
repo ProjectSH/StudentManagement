@@ -77,7 +77,6 @@ function ($scope, $window, $rootScope, $modal, $location, studentService, ipCook
         addStudent.result.then(function () {
             getAllData();
         }, function (error) {
-            log(error);
         });
     };
 
