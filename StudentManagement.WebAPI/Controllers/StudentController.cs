@@ -1,141 +1,57 @@
-﻿using ENTITY.Models;
-using Factory;
-using IBLL;
-using log4net;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using StudentManagement.Data.Models;
+using StudentManagement.ILogic;
 
-namespace WEBAPI.Controllers
+namespace StudentManagement.WebAPI.Controllers
 {
     public class StudentController : ApiController
     {
-        /// <summary>
-        /// 添加学生信息
-        /// post /api/student
-        /// </summary>
-        /// <param name="student">学生信息 </param>
-        /// <returns></returns>
-        public HttpResponseMessage Add(Student student)
+        private readonly IStudentLogic _studentLogic;
+        public StudentController(IStudentLogic studentLogic)
         {
-            try
-            {
-                IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                studentBll.AddStudent(student);
-                var response = Request.CreateResponse<Student>(HttpStatusCode.Created, student);
-                string uri = Url.Link("DefaultApi", new { id = student.Id });
-                response.Headers.Location = new Uri(uri);
-               
-                return response;
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("添加学生错误：" + ex);
-                return null;
-            }
+            _studentLogic = studentLogic;
         }
-        /// <summary>
-        /// 获取所有学生信息
-        /// get /api/student
-        /// </summary>
-        /// <returns></returns>
+
+        [Route("api/student")]
+        [HttpPost]
+        public void Create(Student student)
+        {
+            _studentLogic.Create(student);
+        }
+
+        [Route("api/student")]
+        [HttpGet]
         public IEnumerable<Student> GetAll()
         {
-            try
-            {
-                 IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                 return studentBll.GetAll();
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("获取学生列表错误：" + ex);
-                return null;
-            }
+            return _studentLogic.GetAll();
         }
-        /// <summary>
-        /// 获取所有学生信息
-        /// get /api/student?firstName=&lastName=
-        /// </summary>
-        /// <returns></returns>
+
+        [Route("api/querybyname")]
         [HttpGet]
-        public IEnumerable<Student> Seach(string firstName,string lastName)
+        public IEnumerable<Student> Query(string firstName, string lastName)
         {
-            try
-            {
-                IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                return studentBll.Seach(firstName,lastName);
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("获取学生列表错误：" + ex);
-                return null;
-            }
+            return _studentLogic.QueryByName(firstName, lastName);
         }
-        /// <summary>
-        /// 根据学生编号获取学生信息
-        /// get /api/student/id
-        /// </summary>
-        /// <param name="id">学生编号</param>
-        /// <returns>学生信息</returns>
+        [Route("api/student/{id}")]
+        [HttpGet]
         public Student GetStudentById(int id)
         {
-            try
-            {
-                IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                return studentBll.GetStudentById(id);
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("获取学生信息错误：" + ex);
-                return null;
-            }
+            return _studentLogic.Get(id);
         }
-        /// <summary>
-        /// 更新学生信息
-        /// put api/student
-        /// </summary>
-        /// <param name="student">学生信息</param>
-        /// <returns>是否成功</returns>
+
+        [Route("api/student")]
         [HttpPut]
-        public bool UpdateStudent(Student student)
+        public void Update(Student student)
         {
-            try
-            {
-                IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                return studentBll.UpdateStudent(student);
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("更新学生信息错误：" + ex);
-                return false;
-            }
+            _studentLogic.Update(student);
         }
-        /// <summary>
-        /// 删除学生信息
-        /// delete api/student/id
-        /// </summary>
-        /// <param name="id">学生编号</param>
-        /// <returns>是否成功</returns>
-        public bool DeleteStudent(int id)
+
+        [Route("api/student/{id}")]
+        [HttpDelete]
+        public void Delete(int id)
         {
-            try
-            {
-                IStudentBLL studentBll = BLLFactory.CreateStudentBLL();
-                return studentBll.DeleteStudent(id);
-            }
-            catch (Exception ex)
-            {
-                ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-                log.Error("删除学生信息错误：" + ex);
-                return false;
-            }
+            _studentLogic.Delete(id);
         }
     }
 }

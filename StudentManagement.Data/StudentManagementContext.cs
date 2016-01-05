@@ -1,5 +1,6 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using StudentManagement.Data.Migrations;
 using StudentManagement.Data.Models;
 
 namespace StudentManagement.Data
@@ -8,9 +9,10 @@ namespace StudentManagement.Data
     {
         public StudentManagementContext() : base("name=StudentManageContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<StudentManagementContext, Configuration>());
         }
 
-        public DbSet<Student> CustomerEnquiries { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
