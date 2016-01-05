@@ -1,7 +1,5 @@
-﻿
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Runtime.InteropServices;
 using StudentManagement.Data;
 using StudentManagement.Data.Models;
 using StudentManagement.IRepository;

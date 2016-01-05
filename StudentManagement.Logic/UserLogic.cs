@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StudentManagement.Data.Models;
 using StudentManagement.ILogic;
 using StudentManagement.Infrustructure;
 using StudentManagement.IRepository;
-using StudentManagement.Repository;
 using StudentManagement.Repository.UnitOfWork;
 
 namespace StudentManagement.Logic
