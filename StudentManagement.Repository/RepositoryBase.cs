@@ -29,6 +29,12 @@ namespace StudentManagement.Repository
         {
             return DbSet.Find(id);
         }
+
+        public void Edit(T model)
+        {
+            DataContext.Entry(model).State = EntityState.Modified;
+        }
+
         private DbContext DataContext => _dbFactory.GetContext();
         private IDbSet<T> DbSet => DataContext.Set<T>();
     }

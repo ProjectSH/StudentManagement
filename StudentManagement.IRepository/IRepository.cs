@@ -13,5 +13,7 @@ namespace StudentManagement.IRepository
         void Delete(int id);
         IQueryable<T> Query();
         T Get(int id);
+
+        void Edit(T model);
     }
 }

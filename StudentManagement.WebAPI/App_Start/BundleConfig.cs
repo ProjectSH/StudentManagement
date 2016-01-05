@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace WEBAPI
+namespace StudentManagement.WebAPI
 {
     public class BundleConfig
     {

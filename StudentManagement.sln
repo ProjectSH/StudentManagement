@@ -27,9 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StudentManagement.Layout", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Data", "StudentManagement.Data\StudentManagement.Data.csproj", "{D1607BFF-7C8D-427B-9F10-7835F5BE4605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.ILogic", "FFCG.VisitorLog.ILogic\StudentManagement.ILogic.csproj", "{EFB45FDA-07FB-45D1-ACBD-318840F56CEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.ILogic", "StudentManagement.ILogic\StudentManagement.ILogic.csproj", "{EFB45FDA-07FB-45D1-ACBD-318840F56CEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Logic", "FFCG.VisitorLog.Logic\StudentManagement.Logic.csproj", "{926D0DC7-5007-42D4-87B6-099F3DB74DDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Logic", "StudentManagement.Logic\StudentManagement.Logic.csproj", "{926D0DC7-5007-42D4-87B6-099F3DB74DDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagement.Infrustructure", "StudentManagement.Infrustructure\StudentManagement.Infrustructure.csproj", "{6D5E124C-3185-4923-A8F4-1A8D7A19D552}"
 EndProject
