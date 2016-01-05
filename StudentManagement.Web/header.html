@@ -10,22 +10,7 @@
         <!--  </div>-->
         <div class="top-nav">
             <ul class="nav-left list-unstyled">
-                <li ng-controller="headerController">
-                    <a class="toggle-min" ng-click='switchViewMode()'><i class="fa fa-bars"></i></a>
-                </li>
-                <!--<li class="dropdown text-normal nav-profile" ng-controller="accountController">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">
-                        <i style="color: #ccc" class="glyphicon glyphicon-user"></i> <span class="user-name">{{loginUser.Name}}</span> <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-dark with-arrow">
-                        <li>
-                            <a class="pointer" ng-click="logout(loginUser.Email)">
-                                <i class="fa fa-sign-out"></i>
-                                <span>{{'resource.loginOut' | translate}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>-->
+               
             </ul>
         </div>
     </header>
@@ -36,7 +21,7 @@
             <ul id="nav" style="overflow: hidden; width: auto; height: 100%;">
                 <li ng-class="{'active':currentPage=='student'}">
                     <a href="#/student">
-                        <i class="fa fa-file-text-o"></i><span>Student</span>
+                        <i class="fa fa-file-text-o"></i><span>Students</span>
                     </a>
                 </li>
             </ul>

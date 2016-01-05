@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\app.css" />
     <Content Include="assets\img\loading.gif" />
     <Content Include="header.html" />
     <Content Include="index.html" />
