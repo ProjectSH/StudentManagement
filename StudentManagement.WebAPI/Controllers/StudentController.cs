@@ -2,6 +2,7 @@
 using System.Web.Http;
 using StudentManagement.Data.Models;
 using StudentManagement.ILogic;
+using StudentManagement.WebAPI.Models;
 
 namespace StudentManagement.WebAPI.Controllers
 {
@@ -27,11 +28,11 @@ namespace StudentManagement.WebAPI.Controllers
             return _studentLogic.GetAll();
         }
 
-        [Route("api/student/{firstName}/{lastName}")]
-        [HttpGet]
-        public IEnumerable<Student> QueryByName(string firstName, string lastName)
+        [Route("api/student/search/")]
+        [HttpPost]
+        public IEnumerable<Student> QueryByName(SearchStudentModel model)
         {
-            return _studentLogic.QueryByName(firstName, lastName);
+            return _studentLogic.QueryByName(model.FirstName, model.LastName);
         }
         [Route("api/student/{id}")]
         [HttpGet]
