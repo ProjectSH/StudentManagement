@@ -9,7 +9,6 @@ namespace StudentManagement.Data
     {
         public StudentManagementContext() : base("name=StudentManageContext")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<StudentManagementContext, Configuration>());
         }
 
         public DbSet<Student> Students { get; set; }

@@ -27,9 +27,9 @@ namespace StudentManagement.WebAPI.Controllers
             return _studentLogic.GetAll();
         }
 
-        [Route("api/querybyname")]
+        [Route("api/student/{firstName}/{lastName}")]
         [HttpGet]
-        public IEnumerable<Student> Query(string firstName, string lastName)
+        public IEnumerable<Student> QueryByName(string firstName, string lastName)
         {
             return _studentLogic.QueryByName(firstName, lastName);
         }
