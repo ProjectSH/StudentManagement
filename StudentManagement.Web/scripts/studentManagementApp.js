@@ -17,6 +17,9 @@ function setRoute($routeProvider) {
     $routeProvider.when("/student", {
         templateUrl: "../views/students.html",
         controller: "studentController"
+    }).when("/user", {
+        templateUrl: "../views/users.html",
+        controller: "userController"
     });
 }
 

@@ -1,8 +1,11 @@
-﻿using System.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using StudentManagement.Data.Models;
 using StudentManagement.ILogic;
+using StudentManagement.WebAPI.Models;
 
 namespace StudentManagement.WebAPI.Controllers
 {
@@ -17,9 +20,14 @@ namespace StudentManagement.WebAPI.Controllers
 
         [Route("api/user")]
         [HttpPost]
-        public void Create(User user)
+        public void Create(CreateUserModel user)
         {
-            _userLogic.Create(user);
+            if (!user.Password.Equals(user.ConfirmPassword))
+            {
+                throw new Exception("Password diffrent with confirm password");
+            }
+            
+            _userLogic.Create(new User {UserName = user.UserName,Password = user.Password });
         }
 
         [Route("api/user")]
@@ -43,7 +51,7 @@ namespace StudentManagement.WebAPI.Controllers
             return _userLogic.Get(id);
         }
         [Route("api/user/login")]
-        [HttpGet]
+        [HttpPost]
         public HttpResponseMessage Login(string userName, string password)
         {
             string msg;
@@ -55,6 +63,20 @@ namespace StudentManagement.WebAPI.Controllers
                 response.Content = new StringContent(msg);
             }
             return response;
+        }
+
+        [Route("api/user")]
+        [HttpGet]
+        public IEnumerable<User> GetAll()
+        {
+            return _userLogic.GetAll();
+        }
+
+        [Route("api/user/search/")]
+        [HttpPost]
+        public IEnumerable<User> QueryByName(string userName)
+        {
+            return _userLogic.QueryByName(userName);
         }
 
     }

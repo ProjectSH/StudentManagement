@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using StudentManagement.Data.Models;
 
 namespace StudentManagement.ILogic
@@ -13,5 +10,7 @@ namespace StudentManagement.ILogic
         void Delete(int id);
         User Get(int id);
         bool Login(string userName, string password,out string message);
+        IEnumerable<User> GetAll();
+        IEnumerable<User> QueryByName(string userName);
     }
 }

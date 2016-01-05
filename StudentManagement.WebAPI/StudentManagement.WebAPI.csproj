@@ -183,7 +183,7 @@
     <Compile Include="Installer\WindsorCompositionRoot.cs" />
     <Compile Include="Installer\WindsorDependencyResolver.cs" />
     <Compile Include="Installer\WindsorDependencyScope.cs" />
-    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\SearchStudentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

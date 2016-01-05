@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using StudentManagement.Data.Models;
 using StudentManagement.ILogic;
 using StudentManagement.Infrustructure;
@@ -75,6 +77,19 @@ namespace StudentManagement.Logic
                 return false;
             }
             
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _userRepository.Query().ToList();
+        }
+
+        public IEnumerable<User> QueryByName(string userName)
+        {
+            return
+                _userRepository.Query()
+                    .Where(x => x.UserName.Contains(userName) )
+                    .ToList();
         }
     }
 }

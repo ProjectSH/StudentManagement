@@ -136,6 +136,8 @@
     <Content Include="scripts\studentManagementApp.js" />
     <Content Include="scripts\student\studentController.js" />
     <Content Include="scripts\student\studentService.js" />
+    <Content Include="scripts\user\userController.js" />
+    <Content Include="scripts\user\userService.js" />
     <Content Include="scripts\vendors\angular-cookie.js" />
     <Content Include="scripts\vendors\angular-cookie.min.js" />
     <Content Include="scripts\vendors\angular-touch.min.js" />
@@ -144,6 +146,7 @@
     <Content Include="scripts\vendors\TweenMax.min.js" />
     <Content Include="scripts\vendors\ui-bootstrap-tpls.min.js" />
     <Content Include="views\students.html" />
+    <Content Include="views\users.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
