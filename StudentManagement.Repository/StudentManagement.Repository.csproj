@@ -64,6 +64,7 @@
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\IUnitOfWorkFactory.cs" />
     <Compile Include="UnitOfWork\EntityFrameworkUnitOfWork.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentManagement.Data\StudentManagement.Data.csproj">

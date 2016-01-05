@@ -23,5 +23,7 @@ namespace StudentManagement.Infrustructure
 
             return r.IsMatch(email);
         }
+
+        
     }
 }
