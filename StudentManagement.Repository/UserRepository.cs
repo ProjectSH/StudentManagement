@@ -18,7 +18,7 @@ namespace StudentManagement.Repository
         public User Get(string userName)
         {
            
-            return  DbSet.Single(p => p.UserName.Contains(userName));
+            return  DbSet.FirstOrDefault(p => p.UserName.Equals(userName));
             
         }
         private DbContext DataContext => _dbFactory.GetContext();

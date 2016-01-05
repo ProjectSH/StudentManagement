@@ -46,7 +46,7 @@ namespace StudentManagement.WebAPI.Controllers
             return _userLogic.Get(id);
         }
         [Route("api/user/login")]
-        [HttpPost]
+        [HttpGet]
         public HttpResponseMessage Login(string userName, string password)
         {
             string msg;
