@@ -12,6 +12,6 @@ namespace StudentManagement.ILogic
         void Edit(User model);
         void Delete(int id);
         User Get(int id);
-        bool Login(string userName, string password);
+        bool Login(string userName, string password,out string message);
     }
 }
