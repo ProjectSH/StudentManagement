@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace StudentManagement.Data.Models
 {
@@ -13,5 +16,6 @@ namespace StudentManagement.Data.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Age { get; set; }
+        public virtual IEnumerable<StudentScore> StudentScores { get; set; }
     }
 }

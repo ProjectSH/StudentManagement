@@ -16,7 +16,8 @@ namespace StudentManagement.Logic.Installer
         {
             container.Register(
                 Component.For<IStudentLogic>().ImplementedBy<StudentLogic>().LifestylePerWebRequest(),
-                 Component.For<IUserLogic>().ImplementedBy<UserLogic>().LifestylePerWebRequest()
+                 Component.For<IUserLogic>().ImplementedBy<UserLogic>().LifestylePerWebRequest(),
+                 Component.For<IStudentScoreLogic>().ImplementedBy<StudentScoreLogic>().LifestylePerWebRequest()
                 );
         }
     }

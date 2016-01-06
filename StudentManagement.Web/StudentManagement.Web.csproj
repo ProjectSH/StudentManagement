@@ -129,6 +129,7 @@
     <Content Include="libs\require\require.js" />
     <Content Include="libs\require\text.js" />
     <Content Include="scripts\common\apiTools.js" />
+    <Content Include="scripts\common\bootstrap-datepicker.js" />
     <Content Include="scripts\common\datepicker.js" />
     <Content Include="scripts\common\httpProxy.js" />
     <Content Include="scripts\common\ui-bootstrap.js" />
@@ -184,7 +185,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="libs\bootstrap-datepicker-master\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

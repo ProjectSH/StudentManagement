@@ -52,6 +52,7 @@
     <Compile Include="Installer\LogicInstaller.cs" />
     <Compile Include="StudentLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentScoreLogic.cs" />
     <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>

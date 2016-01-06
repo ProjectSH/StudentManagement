@@ -67,6 +67,7 @@
     <Compile Include="IDbFactory.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentScore.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentManagementContext.cs" />

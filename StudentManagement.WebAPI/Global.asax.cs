@@ -1,8 +1,10 @@
-﻿using System.Web.Http;
+﻿using System.Data.Entity;
+using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using StudentManagement.Data;
 using StudentManagement.WebAPI.Installer;
 
 namespace StudentManagement.WebAPI
@@ -19,7 +21,7 @@ namespace StudentManagement.WebAPI
               new WindsorCompositionRoot(WindsorBootstrapper.Container));
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            //Database.SetInitializer<StudentManagementContext>(null);
         }
     }
 }

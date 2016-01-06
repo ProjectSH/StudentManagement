@@ -151,4 +151,48 @@ function ($scope, $window, $rootScope, $modal, $location, studentService, ipCook
             LastName: lastName
         };
     }
+
+    $scope.AddStudentScore = function (student) {
+
+        var studentScoreCopy = new CreateStudentScoreModel(student.Id);
+        var editStudent = $modal.open({
+            templateUrl: 'StudentScoreModal',
+            controller: addStudentScoreCtrl,
+            backdrop: 'static',
+            resolve: { studentScore: function () { return studentScoreCopy; } }
+        });
+       
+    };
+
+    var addStudentScoreCtrl = ["$scope", "$rootScope", "$modalInstance", "studentService", "studentScore",
+   function ($scope, $rootScope, $modalInstance, studentService, studentScore) {
+
+       $scope.BasicLocations = {};
+       $scope.isUpdating = false;
+
+       $scope.studentScore = angular.copy(studentScore);
+
+       $scope.ok = function () {
+           var studentScoreInfo = angular.copy($scope.studentScore);
+           $scope.isUpdating = true;
+           studentService.AddScore(studentScoreInfo).then(function () {
+               $modalInstance.close();
+           }, function (error) {
+               $scope.isUpdating = false;
+           });
+       };
+
+       $scope.cancel = function () {
+           $modalInstance.dismiss();
+       };
+   }];
 }]);
+
+function CreateStudentScoreModel(studentId) {
+    return {
+        StudentId: studentId,
+        Course: "",
+        Score: "",
+        ExamTime:""
+    };
+}

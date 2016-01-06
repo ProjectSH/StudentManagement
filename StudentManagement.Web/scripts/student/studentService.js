@@ -4,6 +4,9 @@
     studentService.create = function (student) {
         return httpProxy.post("api/student/", student);
     };
+    studentService.AddScore = function (searchStudentScoreNodel) {
+        return httpProxy.post("api/studentscore/", searchStudentScoreNodel);
+    };
     studentService.edit = function (student) {
         return httpProxy.put("api/student/", student);
     };
