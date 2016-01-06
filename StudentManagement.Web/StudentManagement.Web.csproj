@@ -130,6 +130,7 @@
     <Content Include="libs\require\text.js" />
     <Content Include="scripts\common\apiTools.js" />
     <Content Include="scripts\common\bootstrap-datepicker.js" />
+    <Content Include="scripts\common\fmDatePicker.js" />
     <Content Include="scripts\common\httpProxy.js" />
     <Content Include="scripts\common\ui-bootstrap-tpls.js" />
     <Content Include="scripts\common\ui-bootstrap.js" />
