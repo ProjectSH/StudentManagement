@@ -5,11 +5,11 @@
             <div class="form-inline">
                 <div class="form-group">
                     <label class="sr-only" for="searchFirstName">First Name</label>
-                    <input type="text" class="form-control" id="searchFirstName" ng-model="searchFirstName" placeholder="First Name"/>
+                    <input type="text" class="form-control" id="searchFirstName" ng-model="searchFirstName" placeholder="First Name" />
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="searchFirstName">Last Name</label>
-                    <input type="text" class="form-control" id="searchLastName" ng-model="searchLastName" placeholder="Last Name"/>
+                    <input type="text" class="form-control" id="searchLastName" ng-model="searchLastName" placeholder="Last Name" />
                 </div>
                 <div class="form-group">
                     <button class="btn btn-info form-control" ng-click="searchStudent()"><span class="glyphicon glyphicon-search"></span></button>
@@ -20,39 +20,39 @@
                     </button>
                 </div>
             </div>
-            <img src="/assets/img/loading.gif" data-ng-if="dataListShowLoading"/>
+            <img src="/assets/img/loading.gif" data-ng-if="dataListShowLoading" />
             <div ng-show="!dataListShowLoading">
                 <table class="table table-striped">
                     <thead>
-                    <tr>
+                        <tr>
 
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>Age</th>
-                        <th>Options</th>
-                    </tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Options</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="student in students">
-                        <td>{{ student.FirstName }}</td>
-                        <td>{{ student.LastName }}</td>
-                        <td>{{ student.IdentityId }}</td>
-                        <td>{{ student.Email }}</td>
-                        <td>{{ student.Age }}</td>
-                        <td>
-                            <button class="btn" ng-click="editStudent(student)">
-                                <span class="glyphicon glyphicon-pencil"></span>Edit
-                            </button>
-                            <button class="btn" ng-click="deleteStudent(student)">
-                                <span class="glyphicon glyphicon-remove"></span>Delete
-                            </button>
-                            <button class="btn" ng-click="AddStudentScore(student)">
-                                <span class="glyphicon glyphicon-plus"></span>Add Score
-                            </button>
-                        </td>
-                    </tr>
+                        <tr ng-repeat="student in students">
+                            <td>{{ student.FirstName }}</td>
+                            <td>{{ student.LastName }}</td>
+                            <td>{{ student.IdentityId }}</td>
+                            <td>{{ student.Email }}</td>
+                            <td>{{ student.Age }}</td>
+                            <td>
+                                <button class="btn" ng-click="editStudent(student)">
+                                    <span class="glyphicon glyphicon-pencil"></span>Edit
+                                </button>
+                                <button class="btn" ng-click="deleteStudent(student)">
+                                    <span class="glyphicon glyphicon-remove"></span>Delete
+                                </button>
+                                <button class="btn" ng-click="AddStudentScore(student)">
+                                    <span class="glyphicon glyphicon-plus"></span>Add Score
+                                </button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -120,13 +120,13 @@
                     <input type="hidden" ng-model="studentScore.StudentId" />
                     <div class="form-group">
                         <label>Course:</label>
-                        
-                            <select class="form-control" ng-model="studentScore.Course">
-                                <option>english</option>
-                                <option>chinese</option>
-                                <option>physical education</option>
-                                <option>music</option>
-                            </select>
+
+                        <select class="form-control" ng-model="studentScore.Course">
+                            <option>english</option>
+                            <option>chinese</option>
+                            <option>physical education</option>
+                            <option>music</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Score:</label>
@@ -136,7 +136,7 @@
                     <div class="common_date_box add_date_box">
                         <input type="text" class="form-control" autocomplete="off" ng-model="studentCore.ExamTime" data-fm-label="Date" data-fm-date="mm/dd/yyyy" required />
                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                    </div>      
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -145,6 +145,6 @@
             </div>
         </script>
     </section>
-   
+
 </div>
 
