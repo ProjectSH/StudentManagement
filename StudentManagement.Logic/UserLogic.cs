@@ -35,6 +35,7 @@ namespace StudentManagement.Logic
         {
             using (var unitOfwork = _unitOfWorkFactory.GetCurrentUnitOfWork())
             {
+                model.Password = Cryptography.Encrypt(model.Password);
                 _userRepository.Edit(model);
                 unitOfwork.Commit();
             }
@@ -51,7 +52,9 @@ namespace StudentManagement.Logic
 
         public User Get(int id)
         {
-            return _userRepository.Get(id);
+            var user= _userRepository.Get(id);
+            user.Password = Cryptography.Decrypt(user.Password);
+            return user;
         }
 
         public bool Login(string userName, string password,out string message)
@@ -91,5 +94,6 @@ namespace StudentManagement.Logic
                     .Where(x => x.UserName.Contains(userName) )
                     .ToList();
         }
+         
     }
 }

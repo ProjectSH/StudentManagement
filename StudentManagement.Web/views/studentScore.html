@@ -36,7 +36,7 @@
                             <td>{{ studentScore.Student.LastName }}</td>
                             <td>{{ studentScore.Course }}</td>
                             <td>{{ studentScore.Score }}</td>
-                            <td>{{ studentScore.ExamTime | date:'yyyy-mm-dd'}}</td>
+                            <td>{{ studentScore.ExamTime | date:'mm/dd/yyyy'}}</td>
                             <td>
                                 <button class="btn" ng-click="editStudentScore(studentScore)">
                                     <span class="glyphicon glyphicon-pencil"></span>Edit

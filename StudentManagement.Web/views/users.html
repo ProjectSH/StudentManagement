@@ -31,7 +31,7 @@
                     <tbody>
                     <tr ng-repeat="user in users">
                         <td>{{ user.UserName }}</td>
-                        <td>{{$filter('date')(user.LastLoginTime,'yyyy-MM-dd') }}</td>
+                        <td>{{user.LastLoginTime | date:'mm/dd/yyyy' }}</td>
                         <td>
                             <button class="btn" ng-click="editUser(user)">
                                 <span class="glyphicon glyphicon-pencil"></span>Edit
@@ -60,11 +60,11 @@
                     </div>
                     <div class="form-group">
                         <label>Password:</label>
-                        <input type="text" ng-model="user.Password" placeholder="Password" class="form-control" />
+                        <input type="password" ng-model="user.Password" placeholder="Password" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Comfirm Password:</label>
-                        <input type="text" ng-model="user.ConfirmPassword" placeholder="Comfirm Password" class="form-control" />
+                        <input type="password" ng-model="user.ConfirmPassword" placeholder="Comfirm Password" class="form-control" />
                     </div>
                 </form>
             </div>
