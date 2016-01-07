@@ -20,6 +20,9 @@ function setRoute($routeProvider) {
     }).when("/user", {
         templateUrl: "../views/users.html",
         controller: "userController"
+    }).when("/studentscore", {
+        templateUrl: "../views/studentscore.html",
+        controller: "studentscoreController"
     });
 }
 

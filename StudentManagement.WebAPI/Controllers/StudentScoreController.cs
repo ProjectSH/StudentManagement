@@ -14,6 +14,7 @@ namespace StudentManagement.WebAPI.Controllers
     {
         private readonly IStudentScoreLogic _studentScoreLogic;
         private readonly IStudentLogic _studentLogic;
+
         public StudentScoreController(IStudentScoreLogic studentScoreLogic, IStudentLogic studentLogic)
         {
             _studentScoreLogic = studentScoreLogic;
@@ -27,7 +28,13 @@ namespace StudentManagement.WebAPI.Controllers
             var student = _studentLogic.Get(studentScoreModel.StudentId);
             if (student != null)
             {
-                _studentScoreLogic.Create(new StudentScore {Course = studentScoreModel.Course,ExamTime = studentScoreModel.ExamTime,Score=studentScoreModel.Score,Student = student});
+                _studentScoreLogic.Create(new StudentScore
+                {
+                    Course = studentScoreModel.Course,
+                    ExamTime = studentScoreModel.ExamTime,
+                    Score = studentScoreModel.Score,
+                    Student = student
+                });
             }
             else
             {
@@ -42,7 +49,14 @@ namespace StudentManagement.WebAPI.Controllers
             var student = _studentLogic.Get(studentScoreModel.StudentId);
             if (student != null)
             {
-                _studentScoreLogic.Create(new StudentScore { Course = studentScoreModel.Course, ExamTime = studentScoreModel.ExamTime, Score = studentScoreModel.Score, Student = student,Id = studentScoreModel.Id});
+                _studentScoreLogic.Update(new StudentScore
+                {
+                    Course = studentScoreModel.Course,
+                    ExamTime = studentScoreModel.ExamTime,
+                    Score = studentScoreModel.Score,
+                    Student = student,
+                    Id = studentScoreModel.Id
+                });
             }
             else
             {
@@ -72,23 +86,10 @@ namespace StudentManagement.WebAPI.Controllers
         }
 
         [Route("api/studentscore/search/")]
-        [HttpGet]
-        public IEnumerable<SearchStudentScoreModel> Search(SearchStudentScoreModel searchStudentScoreModel)
+        [HttpPost]
+        public IEnumerable<StudentScore> Search(SearchStudentScoreModel searchStudentScoreModel)
         {
-            var studentScorelist = _studentScoreLogic.QueryByName(searchStudentScoreModel.FirstName,
-                searchStudentScoreModel.LastName);
-            IEnumerable<SearchStudentScoreModel> searchStudentScoreModels=new List<SearchStudentScoreModel>();
-            return studentScorelist.Select(studentScore => new SearchStudentScoreModel
-            {
-                Id = studentScore.Id,
-                Course = studentScore.Course,
-                Score = studentScore.Score,
-                ExamTime = studentScore.ExamTime,
-                StudentId = studentScore.Student.Id,
-                FirstName = studentScore.Student.FirstName,
-                LastName = studentScore.Student.LastName
-            }).Aggregate(searchStudentScoreModels, (current, model) => current.Concat(new[] {model}));
+            return _studentScoreLogic.QueryByName(searchStudentScoreModel.FirstName, searchStudentScoreModel.LastName);
         }
-        
     }
 }
