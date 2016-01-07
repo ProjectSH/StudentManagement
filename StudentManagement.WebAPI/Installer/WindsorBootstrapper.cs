@@ -1,6 +1,7 @@
 ﻿using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Castle.MicroKernel.Registration;
+using StudentManagement.DapperRepository.Installer;
 using StudentManagement.Logic.Installer;
 using StudentManagement.Repository.Installer;
 

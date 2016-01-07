@@ -1,0 +1,60 @@
+﻿<div>
+    <section id="content" class="animate-fade-up ng-scope">
+        <h3>Students</h3>
+        <div class="content_box">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="searchFirstName">First Name</label>
+                    <input type="text" class="form-control" id="searchFirstName" ng-model="searchFirstName" placeholder="First Name" />
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="searchFirstName">Last Name</label>
+                    <input type="text" class="form-control" id="searchLastName" ng-model="searchLastName" placeholder="Last Name" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info form-control" ng-click="searchStudent()"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" ng-click="addStudent()">
+                        <span class="glyphicon glyphicon-user"></span>Create New Student
+                    </button>
+                </div>
+            </div>
+            <img src="/assets/img/loading.gif" data-ng-if="dataListShowLoading" />
+            <div ng-show="!dataListShowLoading">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="student in students">
+                            <td>{{ student.FirstName }}</td>
+                            <td>{{ student.LastName }}</td>
+                            <td>{{ student.IdentityId }}</td>
+                            <td>{{ student.Email }}</td>
+                            <td>{{ student.Age }}</td>
+                            <tr  ng-repeat="studentScore in student.">
+                                
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+
+       
+
+        
+    </section>
+
+</div>
+

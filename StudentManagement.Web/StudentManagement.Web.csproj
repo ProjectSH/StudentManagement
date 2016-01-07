@@ -136,6 +136,8 @@
     <Content Include="scripts\common\ui-bootstrap.js" />
     <Content Include="scripts\header\headerController.js" />
     <Content Include="scripts\studentManagementApp.js" />
+    <Content Include="scripts\studentScoreList\studentScoreListController.js" />
+    <Content Include="scripts\studentScoreList\studentScoreListService.js" />
     <Content Include="scripts\studentScore\studentscoreController.js" />
     <Content Include="scripts\studentScore\studentscoreService.js" />
     <Content Include="scripts\student\studentController.js" />
@@ -151,6 +153,7 @@
     <Content Include="scripts\vendors\ui-bootstrap-tpls.min.js" />
     <Content Include="views\students.html" />
     <Content Include="views\studentScore.html" />
+    <Content Include="views\StudentScoreList.html" />
     <Content Include="views\users.html" />
     <Content Include="Web.config" />
   </ItemGroup>

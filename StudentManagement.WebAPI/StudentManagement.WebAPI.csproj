@@ -222,6 +222,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StudentManagement.DapperRepository\StudentManagement.DapperRepository.csproj">
+      <Project>{dbea7947-567b-402a-8bbb-8f72f5906bef}</Project>
+      <Name>StudentManagement.DapperRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StudentManagement.ILogic\StudentManagement.ILogic.csproj">
       <Project>{efb45fda-07fb-45d1-acbd-318840f56cea}</Project>
       <Name>StudentManagement.ILogic</Name>

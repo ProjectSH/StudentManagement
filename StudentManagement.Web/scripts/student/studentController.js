@@ -156,7 +156,7 @@ function ($scope, $window, $rootScope, $modal, $location, studentService, ipCook
 
         var studentScoreCopy = new CreateStudentScoreModel(student.Id);
         var editStudent = $modal.open({
-            templateUrl: 'studentScoreModal',
+            templateUrl: 'StudentScoreModal',
             controller: addStudentScoreCtrl,
             backdrop: 'static',
             resolve: { studentScore: function () { return studentScoreCopy; } }

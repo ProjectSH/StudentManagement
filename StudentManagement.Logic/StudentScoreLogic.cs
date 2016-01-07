@@ -57,9 +57,20 @@ namespace StudentManagement.Logic
 
         public IEnumerable<StudentScore> QueryByName(string firstName, string lastName)
         {
-            return _studentScoreRepository.Query()
-                .Where( p =>p.Student.FirstName.Contains(firstName) && p.Student.LastName.ToLower().Contains(lastName.ToLower()))
-                .ToList();
+            var results = _studentScoreRepository.Query();
+            if (string.IsNullOrEmpty(firstName) && string.IsNullOrEmpty(lastName))
+            {
+                return results.ToList();
+            }
+            if (!string.IsNullOrEmpty(firstName))
+            {
+                results = results.Where(p => p.Student.FirstName.ToLower().Contains(firstName.ToLower()));
+            }
+            if (!string.IsNullOrEmpty(lastName))
+            {
+                results = results.Where(p => p.Student.LastName.ToLower().Contains(lastName.ToLower()));
+            }
+            return results.ToList();
         }
     }
 }

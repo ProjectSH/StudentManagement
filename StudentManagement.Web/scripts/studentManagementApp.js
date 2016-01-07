@@ -23,6 +23,9 @@ function setRoute($routeProvider) {
     }).when("/studentscore", {
         templateUrl: "../views/studentscore.html",
         controller: "studentscoreController"
+    }).when("/studentscorelist", {
+        templateUrl: "../views/StudentScoreList.html",
+        controller: "studentScoreListController"
     });
 }
 
