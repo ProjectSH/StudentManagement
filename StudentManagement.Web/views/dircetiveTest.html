@@ -1,0 +1,54 @@
+﻿<style>
+    .expander {
+    border: 1px solid black;
+    width: 250px;
+}
+
+.expander>.title {
+    background-color: black;
+    color: white;
+    padding: .1em .3em;
+    cursor: pointer;
+}
+
+.expander>.body {
+    padding: .1em .3em;
+}
+</style>
+<div>
+    <section id="content" class="animate-fade-up ng-scope">
+        <div class="content_box">
+            <h3>test one</h3>
+            <hello></hello>
+            <br/>
+            <br/>
+            <h3>test two</h3>
+            <two>
+                <span>原始的内容，</span>
+                <span>还会在这里。</span>
+            </two>
+            <br/>
+            <br/>
+            <h3>test three</h3>
+            <div ng-repeat='thing in things'>
+                <three></three>
+            </div>
+            <h3>test four</h3>
+            <div>
+                <div ng-controller='fourController'>
+                    <four class='four' four-title='title'>
+                        {{text}}
+                    </four>
+                </div>
+            </div>
+        </div>
+        <h3>test five</h3>
+        <div ng-controller='FiveController'>
+            <accordion>
+                <expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
+                    {{expander.text}}
+                </expander>
+            </accordion>
+        </div>
+    </section>
+</div>

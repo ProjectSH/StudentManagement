@@ -134,6 +134,7 @@
     <Content Include="scripts\common\httpProxy.js" />
     <Content Include="scripts\common\ui-bootstrap-tpls.js" />
     <Content Include="scripts\common\ui-bootstrap.js" />
+    <Content Include="scripts\dircetive\dircetiveTestController.js" />
     <Content Include="scripts\header\headerController.js" />
     <Content Include="scripts\studentManagementApp.js" />
     <Content Include="scripts\studentScoreList\studentScoreListController.js" />
@@ -142,6 +143,7 @@
     <Content Include="scripts\studentScore\studentscoreService.js" />
     <Content Include="scripts\student\studentController.js" />
     <Content Include="scripts\student\studentService.js" />
+    <Content Include="views\dircetiveTest.html" />
     <Content Include="scripts\user\userController.js" />
     <Content Include="scripts\user\userService.js" />
     <Content Include="scripts\vendors\angular-cookie.js" />

@@ -15,7 +15,7 @@ namespace StudentManagement.WebAPI.Installer
         {
             _container = new WindsorContainer();
             _container.Install(FromAssembly.This(),
-                FromAssembly.Containing<RepositoryInstaller>(),
+                FromAssembly.Containing<DapperRepositoryInstaller>(),
                 FromAssembly.Containing<LogicInstaller>()
                 );
 

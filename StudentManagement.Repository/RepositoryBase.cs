@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using StudentManagement.Data;
 
@@ -21,7 +22,7 @@ namespace StudentManagement.Repository
         {
             DbSet.Remove(DbSet.Find(id));
         }
-        public IQueryable<T> Query()
+        public IEnumerable<T> Query()
         {
             return DbSet.AsQueryable();
         }

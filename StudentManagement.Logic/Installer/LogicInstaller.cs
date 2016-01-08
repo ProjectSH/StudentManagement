@@ -10,9 +10,10 @@ namespace StudentManagement.Logic.Installer
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Component.For<IStudentLogic>().ImplementedBy<StudentLogic>().LifestylePerWebRequest(),
-                 Component.For<IUserLogic>().ImplementedBy<UserLogic>().LifestylePerWebRequest(),
-                 Component.For<IStudentScoreLogic>().ImplementedBy<StudentScoreLogic>().LifestylePerWebRequest()
+                Component.For<IStudentLogic>().ImplementedBy<StudentLogic>().LifestylePerWebRequest()
+                //,
+                // Component.For<IUserLogic>().ImplementedBy<UserLogic>().LifestylePerWebRequest(),
+                // Component.For<IStudentScoreLogic>().ImplementedBy<StudentScoreLogic>().LifestylePerWebRequest()
                 );
         }
     }

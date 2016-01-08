@@ -12,13 +12,14 @@ namespace StudentManagement.Repository.Installer
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
-                Component.For<IUnitOfWorkFactory>().ImplementedBy<UnitOfWorkFactory>().LifestylePerWebRequest(),
-                Component.For<IUnitOfWork>().ImplementedBy<EntityFrameworkUnitOfWork>().LifestylePerWebRequest(),
-                Component.For<IDbFactory>().ImplementedBy<DataBaseFactory>().LifestyleSingleton(),
-                Component.For<StudentManagementContext>().LifestylePerWebRequest(),
-                Component.For<IStudentRepository>().ImplementedBy<StudentRepository>().LifestyleSingleton(),
-                Component.For<IUserRepository>().ImplementedBy<UserRepository>().LifestyleSingleton(),
-                Component.For<IStudentScoreRepository>().ImplementedBy<StudentScoreReposition>().LifestyleSingleton()
+                //Component.For<IUnitOfWorkFactory>().ImplementedBy<UnitOfWorkFactory>().LifestylePerWebRequest(),
+                //Component.For<IUnitOfWork>().ImplementedBy<EntityFrameworkUnitOfWork>().LifestylePerWebRequest(),
+                //Component.For<IDbFactory>().ImplementedBy<DataBaseFactory>().LifestyleSingleton(),
+                //Component.For<StudentManagementContext>().LifestylePerWebRequest(),
+                Component.For<IStudentRepository>().ImplementedBy<StudentRepository>().LifestyleSingleton()
+                //,
+                //Component.For<IUserRepository>().ImplementedBy<UserRepository>().LifestyleSingleton(),
+                //Component.For<IStudentScoreRepository>().ImplementedBy<StudentScoreReposition>().LifestyleSingleton()
                 );
         }
     }

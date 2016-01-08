@@ -11,9 +11,8 @@ namespace StudentManagement.IRepository
     {
         void Create(T model);
         void Delete(int id);
-        IQueryable<T> Query();
+        IEnumerable<T> Query();
         T Get(int id);
-
         void Edit(T model);
     }
 }

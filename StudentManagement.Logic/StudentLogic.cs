@@ -10,44 +10,44 @@ namespace StudentManagement.Logic
     public class StudentLogic : IStudentLogic
     {
         private readonly IStudentRepository _studentRepository;
-        private readonly IUnitOfWorkFactory _unitOfWorkFactory;
+        //private readonly IUnitOfWorkFactory _unitOfWorkFactory;
 
-        public StudentLogic(IStudentRepository studentRepository, IUnitOfWorkFactory unitOfWorkFactory)
+        //public StudentLogic(IStudentRepository studentRepository, IUnitOfWorkFactory unitOfWorkFactory)
+         public StudentLogic(IStudentRepository studentRepository)
         {
             _studentRepository = studentRepository;
-            _unitOfWorkFactory = unitOfWorkFactory;
         }
 
         public void Create(Student model)
         {
-            using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
-            {
+            //using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
+            //{
                 _studentRepository.Create(model);
-                unitOfWork.Commit();
-            }
+                //unitOfWork.Commit();
+            //}
         }
 
         public void Update(Student model)
         {
-            using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
-            {
+            //using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
+            //{
                 _studentRepository.Edit(model);
-                unitOfWork.Commit();
-            }
+                //unitOfWork.Commit();
+            //}
         }
 
         public void Delete(int id)
         {
-            using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
-            {
+            //using (var unitOfWork = _unitOfWorkFactory.GetCurrentUnitOfWork())
+            //{
                 _studentRepository.Delete(id);
-                unitOfWork.Commit();
-            }
+            //    unitOfWork.Commit();
+            //}
         }
 
         public IEnumerable<Student> GetAll()
         {
-            return _studentRepository.Query().ToList();
+            return _studentRepository.Query();
         }
 
         public Student Get(int id)
@@ -58,9 +58,8 @@ namespace StudentManagement.Logic
         public IEnumerable<Student> QueryByName(string firstName, string lastName)
         {
             return
-                _studentRepository.Query()
-                    .Where(x => x.FirstName.Contains(firstName) && x.LastName.Contains(lastName))
-                    .ToList();
+                _studentRepository.QueryByName(firstName,lastName);
+                    
         }
     }
 }

@@ -10,7 +10,7 @@ app.run(['$rootScope', "ipCookie", "$http", "$location", function ($rootScope, i
     $rootScope.isMini = false;
     $rootScope.pageLoading = true;
     $rootScope.isShowMenu = true;
-    $location.path("/student");
+    $location.path("/dircetiveTest");
 }]);
 
 function setRoute($routeProvider) {
@@ -26,6 +26,9 @@ function setRoute($routeProvider) {
     }).when("/studentscorelist", {
         templateUrl: "../views/StudentScoreList.html",
         controller: "studentScoreListController"
+    }).when("/dircetiveTest", {
+        templateUrl: "../views/dircetiveTest.html",
+        controller: "dircetiveTestController"
     });
 }
 
