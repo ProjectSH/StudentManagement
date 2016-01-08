@@ -43,7 +43,7 @@ app.directive('hello', function () {
             }
         }
     }
-}).directive('accordion', function () {
+}).directive('accordion1', function () {
     return {
         restrict: 'EA',
         replace: true,
@@ -68,7 +68,7 @@ app.directive('hello', function () {
         restrict : 'EA',
         replace : true,
         transclude : true,
-        require : '^?accordion',
+        require : '^?accordion1',
         scope : {
             title : '=expanderTitle'
         },
